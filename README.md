@@ -14,6 +14,8 @@ Though the server program is released, it's useage is still in protection for so
 
 You may keep an eye on this note to keep up with the latest news.
 
+This will be updated few days later.
+
 ### How to use the server program
 
 Though the server program is released, it's useage is still in protection for some reason.
