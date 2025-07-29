@@ -22,4 +22,4 @@ These factors gives CBCOJ some significant advantages:
 2. Low hardware requirements
 3. High access efficiency
 
-You can imaging that there's a lot more benefits other than the above advantages. So it's ULTRA suitable if you want to run a personal/local OJ with even no cost!
+You can imaging that there's a lot more benefits other than the above advantages. So it's ULTRA suitable if you want to run a personal/local OJ with nearly zero cost!
