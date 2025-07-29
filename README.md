@@ -10,3 +10,5 @@ Such descriptions has already became history. Now it has both front-end and back
 
 However, it remains super lightweight as all the codes were written on hand, without using any existing extension libs or softwares.
 
+In addition, I've finished many tests on this OJ. It finishes 100K login requests in about 8 seconds(without any access limitation).
+
