@@ -12,3 +12,14 @@ However, it remains super lightweight as all the codes were written on hand, wit
 
 In addition, I've finished many tests on this OJ. It finishes 100K login requests in about 8 seconds(without any access limitation).
 
+For the front-end, we used Node.js+HTML for convenient web page rendering.
+
+For the back-end, we used the more efficient C++ for high-speed and low consumption processing.
+
+These factors gives CBCOJ some significant advantages:
+
+1. High portability
+2. Low hardware requirements
+3. High access efficiency
+
+You can imaging that there's a lot more benefits other than the above advantages. So it's ULTRA suitable if you want to run a personal/local OJ with even no cost!
