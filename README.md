@@ -23,3 +23,6 @@ These factors gives CBCOJ some significant advantages:
 3. High access efficiency
 
 You can imaging that there's a lot more benefits other than the above advantages. So it's ULTRA suitable if you want to run a personal/local OJ with nearly zero cost!
+
+### How to use CBCOJ
+
