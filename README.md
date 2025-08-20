@@ -40,10 +40,13 @@ Put CBCOJ_Server.exe under the folder `server/`, and put CBCOJ_Front.exe under t
 
 When using, you should start CBCOJ_Server.exe first, fetch the ipv4 of the machine on which CBCOJ_Server.exe runs, it'll be used later.
 
+#### Backend
+
 The structure of `server/` should be like this:
 
 ```plain
 {
+  'CBCOJ_Server.exe',
   'account.ini',
   'basic_setting.ini',
   'log.txt',
@@ -69,3 +72,58 @@ The structure of `server/` should be like this:
 `rc.txt` stores the latest submission id.
 
 More detailed info can be found in the release statement.
+
+#### Frontend
+
+The structure of `front/` should be like this:
+
+```plain
+{
+  'CBCOJ_Front.exe',
+  'config.json',
+  'admin/':{
+    'dashboard.html',
+    'login.html',
+    'assets/':{
+      'admin.css',
+      'admin.js'
+    }
+  },
+  'public/':{
+    'api/':{
+      ...
+    },
+    'login/':{
+      'index.html'
+    },
+    'submit/':{
+      'index.html'
+    },
+    'files/':{
+      ...
+    },
+    'templates/':{
+      'record.html',
+      'list.html',
+      'content.html',
+      'record.css',
+      'comview.css',
+      'listpagin.css',
+      'login.js',
+      'maodie.jpg',
+      'chun.jpg'
+    },
+    'problem/':{
+      ...
+    },
+    'records/':{
+      ...
+    },
+    '403.html',
+    '404.html',
+    'index.html',
+    'favicon.ico',
+    'robots.txt',
+  }
+}
+```
