@@ -26,4 +26,4 @@ You can imaging that there's a lot more benefits other than the above advantages
 
 ### How to use CBCOJ
 
-You should download both
+You should download three files: CBCOJ_Server.exe, CBCOJ_
