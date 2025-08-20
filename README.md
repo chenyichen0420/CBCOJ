@@ -34,4 +34,8 @@ Put the above three files in the same folder. Then run this command below:
 
 A different CBCOJ_Front.exe will be automatically generated and directly replace the original one.
 
-Extract config_server.zip into a folder(take `serve/` for example), and extract config_front into another(take `front/` for example).
+Extract config_server.zip into a folder(take `server/` for example), and extract config_front into another(take `front/` for example).
+
+Put CBCOJ_Server.exe under the folder `server/`, and put CBCOJ_Front.exe under the folder  `front/`.
+
+When using, you should start CBCOJ_Server.exe first, fetch the ipv4 of the machine on which CBCOJ_Server.exe runs, it'll be used later.
