@@ -51,11 +51,21 @@ The structure of `server/` should be like this:
   'records/':{
     ...
   },
-  'work:/':{
+  'work/':{
     ...
   },
-  'work1:/':{
+  'work1/':{
     ...
   }
 }
 ```
+
+`account.ini` stores the name and password of all accounts. You can set it manually.
+
+`basic_setting.ini` stores some settings of the exe. You may change it in a specific way.
+
+`log.txt` is the log file of CBCOJ_Server.exe. You can send it to me if the application crashes for some unknown reason.
+
+`rc.txt` stores the latest submission id.
+
+More detailed info can be found in the release statement.
