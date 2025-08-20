@@ -26,7 +26,7 @@ You can imaging that there's a lot more benefits other than the above advantages
 
 ### How to use CBCOJ
 
-You should download three files: CBCOJ_Server.exe, CBCOJ_Front.exe, upx.exe.
+You should download five files: CBCOJ_Server.exe, CBCOJ_Front.exe, upx.exe, config_server.zip, and config_front.zip.
 
 Put the above three files in the same folder. Then run this command below:
 
@@ -34,3 +34,4 @@ Put the above three files in the same folder. Then run this command below:
 
 A different CBCOJ_Front.exe will be automatically generated and directly replace the original one.
 
+Extract config_server.zip into a folder(take `serve/` for example), and extract config_front into another(take `front/` for example).
