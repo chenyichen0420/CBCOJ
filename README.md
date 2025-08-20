@@ -39,3 +39,6 @@ Extract config_server.zip into a folder(take `server/` for example), and extract
 Put CBCOJ_Server.exe under the folder `server/`, and put CBCOJ_Front.exe under the folder  `front/`.
 
 When using, you should start CBCOJ_Server.exe first, fetch the ipv4 of the machine on which CBCOJ_Server.exe runs, it'll be used later.
+
+The structure of `server/` should be like this:
+
