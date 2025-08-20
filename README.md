@@ -42,3 +42,20 @@ When using, you should start CBCOJ_Server.exe first, fetch the ipv4 of the machi
 
 The structure of `server/` should be like this:
 
+```plain
+{
+  'account.ini',
+  'basic_setting.ini',
+  'log.txt',
+  'rc.txt',
+  'records/':{
+    ...
+  },
+  'work:/':{
+    ...
+  },
+  'work1:/':{
+    ...
+  }
+}
+```
