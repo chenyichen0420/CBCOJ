@@ -12,7 +12,7 @@ However, it remains super lightweight as all the codes were written on hand, wit
 
 In addition, I've finished many tests on this OJ. It finishes 100K login requests in about 8 seconds(without any access limitation).
 
-For the front-end, we used Node.js+HTML for convenient web page rendering.
+For the front-end, we used Node.js+HTML+css for convenient web page rendering.
 
 For the back-end, we used the more efficient C++ for high-speed and low consumption processing.
 
@@ -26,3 +26,4 @@ You can imaging that there's a lot more benefits other than the above advantages
 
 ### How to use CBCOJ
 
+You should download both
