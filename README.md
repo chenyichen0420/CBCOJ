@@ -71,7 +71,7 @@ The structure of `server/` should be like this:
 
 `rc.txt` stores the latest submission id.
 
-More detailed info can be found in the release statement.
+More detailed information can be found in the release statement.
 
 #### Frontend
 
@@ -127,3 +127,22 @@ The structure of `front/` should be like this:
   }
 }
 ```
+
+Since it's the frontend of a website, most files simply serves for the user view, you don't need to care about move of them.
+
+You need to focus on `front/config.json`, `front/public/problem/`, and `front/public/files/`.
+
+the json file is the settings for CBCOJ_Front.exe. The structure is as follow:
+
+```plain
+{
+	"port": ...,
+	"ip": ...,
+	"adport": ...,
+	"adaccount": [
+		...
+	]
+}
+```
+
+More detailed information can be found in the release statement.
