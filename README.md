@@ -40,7 +40,7 @@ Put CBCOJ_Server.exe under the folder `server/`, and put CBCOJ_Front.exe under t
 
 When using, you should start CBCOJ_Server.exe first, fetch the ipv4 of the machine on which CBCOJ_Server.exe runs, it'll be used later.
 
-#### Backend
+#### Backend(Judge Server)
 
 The structure of `server/` should be like this:
 
@@ -63,17 +63,29 @@ The structure of `server/` should be like this:
 }
 ```
 
-`account.ini` stores the name and password of all accounts. You can set it manually.
+`account.ini` stores the name and password of all accounts. You can set it manually, following the following format:
 
-`basic_setting.ini` stores some settings of the exe. You may change it in a specific way.
+The first list contains one non-negative integer $n$, representing the number of different accounts.
 
-`log.txt` is the log file of CBCOJ_Server.exe. You can send it to me if the application crashes for some unknown reason.
+For the next $n$ lines, each line contains two string consisting entirely of non space visible characters and one integer, separated with spaces.
+
+For any one of these $n$ lines, the first string represents the name of an account, the second string represents the password of the account, the integer represents the user id of the account. Note that user id is repeatable.
+
+`basic_setting.ini` stores some settings of the exe. You may change it following the following format:
+
+The first line contains one integer $n$, representing the number of evaluation threads you want to start.
+
+The second line contains the path of a folder. The submitted code will be temporarily stored here, but it will not be automatically cleaned.
+
+For the next $n$ lines, each line contains a path of a folder. The submitted code will runs in here, so it's strongly recommended to clean these folders before starting the judger program.
+
+`log.txt` is the log file of CBCOJ_Server.exe. You can send it to me if the application crashes for some unknown reason. And it can be cleared or deleted freely.
 
 `rc.txt` stores the latest submission id.
 
 More detailed information can be found in the release statement.
 
-#### Frontend
+#### Frontend(Webpage Server)
 
 The structure of `front/` should be like this:
 
@@ -144,5 +156,3 @@ the json file is the settings for CBCOJ_Front.exe. The structure is as follow:
 	]
 }
 ```
-
-More detailed information can be found in the release statement.
