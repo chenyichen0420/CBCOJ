@@ -152,7 +152,19 @@ the json file is the settings for CBCOJ_Front.exe. The structure is as follow:
 	"ip": ...,
 	"adport": ...,
 	"adaccount": [
+		{"username":"username1", "password":"password1"},
+		{"username":"username2", "password":"password2"},
 		...
 	]
 }
 ```
+
+Value "port" represents the port number of the website's main site.
+
+Value "adport" represents the port number of the website's management site.
+
+Value "ip" represents the judge machine's IP(IPv4).
+
+List "adaccount" represents pairs of username and password used to access the management site.
+
+In folder `front/public/problem/`, you can configure the content of the questions you set on the backend. You should put __problemname__.html
