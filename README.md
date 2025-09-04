@@ -167,4 +167,6 @@ Value "ip" represents the judge machine's IP(IPv4).
 
 List "adaccount" represents pairs of username and password used to access the management site.
 
-In folder `front/public/problem/`, you can configure the content of the questions you set on the backend. You should put __problemname__.html
+In folder `front/public/problem/`, you can configure the content of the questions you set on the backend. You should put problemname.html in the folder.
+
+In folder `front/public/files/`, you can put some files in it. Others can access or download these files through this url: `website/files/filename`.
