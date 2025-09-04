@@ -1,1 +1,1 @@
-This folder stores the public parts of the source file of the frontend.
+This folder shows the structure of the frontend configuration.
