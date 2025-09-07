@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBCOJ详情</title>
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <style>
         * {
             margin: 0;
@@ -251,9 +252,31 @@
             <div class="status-indicator logged-in" id="statusIndicator"></div>
             <span id="statusText">这是主页</span>
         </div>
-        <iframe src="./vindex.html" style="width: 100%; height: 80vh;" onload="this.height=iFrame.document.body.scrollHeight" scrolling="yes" frameborder="no"></iframe>
+        <iframe src="./vindex.html" id="contentFrame" onload="resizeIframe(this)" scrolling="yes"></iframe>
     </div>
+
+    <script>
+        function resizeIframe(iframe) {
+            try {
+                // 获取 iframe 的内容高度
+                const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+                // 设置 iframe 的高度
+                iframe.style.height = contentHeight + 'px';
+            } catch (e) {
+                console.error("无法调整 iframe 高度:", e);
+            }
+        }
+
+        // 监听窗口大小变化，重新调整 iframe 高度
+        window.addEventListener('resize', function() {
+            const iframe = document.getElementById('contentFrame');
+            if (iframe) {
+                resizeIframe(iframe);
+            }
+        });
+    </script>
 </body>
 
 </html>
+
 
