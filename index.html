@@ -244,13 +244,6 @@
             animation: fadeIn 0.8s ease-out;
             position: relative;
         }
-
-        iframe {
-            width: calc(90%); /* 宽度为容器宽度的80% */
-            height: calc(90%); /* 高度为容器高度减去100px */
-            border: none; /* 去掉边框 */
-            scrolling: yes; /* 允许滚动 */
-        }
     </style>
 </head>
 <body>
@@ -259,8 +252,7 @@
             <div class="status-indicator logged-in" id="statusIndicator"></div>
             <span id="statusText">这是主页</span>
         </div>
-        <iframe src="./vindex.html" onload="this.height=this.contentWindow.document.body.scrollHeight"></iframe>
+        <iframe src="./vindex.html" style="width: 100%; height: 80vh;" scrolling="yes" frameborder="no"></iframe>
     </div>
 </body>
 </html>
-
