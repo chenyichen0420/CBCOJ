@@ -175,8 +175,8 @@ In folder `front/public/files/`, you can put some files in it. Others can access
 
 #### Frontend(Webpage Server)
 
-![](https://cbcoj.netlify.app/startprc.png)
+![](https://raw.githubusercontent.com/chenyichen0420/CBCOJ/refs/heads/main/startprc.png)
 
-![](https://cbcoj.netlify.app/adminprc.png)
+![](https://raw.githubusercontent.com/chenyichen0420/CBCOJ/refs/heads/main/adminprc.png)
 
-![](https://cbcoj.netlify.app/mainprc.png)
+![](https://raw.githubusercontent.com/chenyichen0420/CBCOJ/refs/heads/main/mainprc.png)
