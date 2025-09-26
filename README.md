@@ -170,3 +170,13 @@ List "adaccount" represents pairs of username and password used to access the ma
 In folder `front/public/problem/`, you can configure the content of the questions you set on the backend. You should put problemname.html in the folder.
 
 In folder `front/public/files/`, you can put some files in it. Others can access or download these files through this url: `website/files/filename`.
+
+### How it works
+
+#### Frontend(Webpage Server)
+
+![](https://cbcoj.netlify.app/startprc.png)
+
+![](https://cbcoj.netlify.app/adminprc.png)
+
+![](https://cbcoj.netlify.app/mainprc.png)
