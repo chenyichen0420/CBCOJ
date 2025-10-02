@@ -1,5 +1,9 @@
 ## CBCOJ
 
+### Development news
+
+From version 5.30.080, the backend supports both Windows(10/11) and Linux!
+
 ### What's CBCOJ
 
 CBCOJ is a super lightweight mini OJ that can and only supports login, logout, obtaining questions, submitting reviews, and querying review results.
