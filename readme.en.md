@@ -144,7 +144,7 @@ The structure of `front/` should be like this:
 }
 ```
 
-Since it's the frontend of a website, most files simply serves for the user view, you don't need to care about move of them.
+Since it's the frontend of a website, most files simply serves for the user view, you don't need to care about most of them.
 
 You need to focus on `front/config.json`, `front/public/problem/`, and `front/public/files/`.
 
