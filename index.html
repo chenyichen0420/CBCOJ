@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,8 +66,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
@@ -101,7 +109,8 @@
             font-size: 1.1rem;
         }
 
-        input, textarea {
+        input,
+        textarea {
             width: 100%;
             padding: 15px;
             border: 2px solid #e1e5eb;
@@ -110,8 +119,9 @@
             transition: all 0.3s;
             background: #f8f9fa;
         }
-        
-        input:focus, textarea:focus {
+
+        input:focus,
+        textarea:focus {
             border-color: #3498db;
             outline: none;
             box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
@@ -170,7 +180,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .response-box {
@@ -227,7 +239,7 @@
             .container {
                 padding: 30px 20px;
             }
-            
+
             h1 {
                 font-size: 1.8rem;
             }
@@ -246,14 +258,61 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="status-box" id="statusBox">
             <div class="status-indicator logged-in" id="statusIndicator"></div>
             <span id="statusText">这是主页</span>
         </div>
-        <iframe src="./vindex.html" style="width: 100%; height: 80vh;" scrolling="yes" frameborder="no"></iframe>
+        <iframe id="contentFrame" src="" style="width: 100%; height: 80vh;" scrolling="yes" frameborder="no"></iframe>
     </div>
-</body>
-</html>
 
+    <script>
+        // 语言检测函数
+        function detectLanguage() {
+            // 获取浏览器的语言首选项
+            const browserLanguages = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+
+            // 检查是否有中文变体
+            for (let lang of browserLanguages) {
+                // 标准化语言代码（例如：zh-CN -> zh, zh-TW -> zh）
+                const primaryLang = lang.split('-')[0].toLowerCase();
+
+                if (primaryLang === 'zh') {
+                    return 'zh';
+                }
+            }
+
+            // 默认返回英文
+            return 'en';
+        }
+
+        // 设置iframe源
+        function setIframeSource() {
+            const language = detectLanguage();
+            const iframe = document.getElementById('contentFrame');
+            const statusText = document.getElementById('statusText');
+
+            let sourceFile;
+            if (language === 'zh') {
+                sourceFile = './vindex-zh.html';
+                statusText.textContent = '主页-中文';
+            } else {
+                sourceFile = './vindex-en.html';
+                statusText.textContent = 'Homepage-English';
+            }
+
+            iframe.src = sourceFile;
+
+            // 可选：在控制台输出检测结果
+            console.log('检测到的语言:', language);
+            console.log('加载的文件:', sourceFile);
+        }
+
+        // 页面加载完成后设置iframe
+        document.addEventListener('DOMContentLoaded', setIframeSource);
+    </script>
+</body>
+
+</html>
