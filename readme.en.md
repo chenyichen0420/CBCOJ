@@ -1,3 +1,5 @@
+**Select Language:** [Simplified Chinese](README.md) | [English](readme.en.md)
+
 ## CBCOJ
 
 ### Development news
