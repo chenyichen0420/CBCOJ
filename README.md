@@ -1,4 +1,4 @@
-**选择语言:** [简体中文](README.md) | [English](readme.en.md)
+**选择语言:** [简体中文](README.md) | [英语](readme.en.md)
 
 ## CBCOJ
 
