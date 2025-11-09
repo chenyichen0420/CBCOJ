@@ -118,7 +118,7 @@ front/
 As this serves the website frontend, most files are for presentation and require no direct modification. Key components for configuration are:
 
 *   `front/config.json`: Main configuration file for the front-end server.
-    ```json
+    ```
     {
         "port": ...,
         "ip": ...,
