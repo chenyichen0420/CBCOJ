@@ -1,5 +1,7 @@
 **Select Language:** [简体中文](README.md) | [English](readme.en.md)
 
+If there is a conflict, please refer to the Chinese version.
+
 ## CBCOJ
 
 ### Development News
