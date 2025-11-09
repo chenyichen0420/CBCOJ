@@ -4,6 +4,10 @@
 
 ### Development News
 
+#### Local Deployment
+
+The first official release version will be configured in this repository within 2 weeks, please stay tuned.
+
 #### Online try-out
 
 Usually, you can access [this website](https://cbcoj.loca.lt/) to try out our newest features from 8pm on Sunday to 3pm on saturday next week.
