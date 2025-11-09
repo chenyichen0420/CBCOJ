@@ -1,188 +1,134 @@
-**Select Language:** [Simplified Chinese](README.md) | [English](readme.en.md)
+**Select Language:** [简体中文](README.md) | [English](readme.en.md)
 
 ## CBCOJ
 
-### Development news
+### Development News
 
-From version 5.30.080, the backend supports both Windows(10/11) and Linux!
+Starting from version 5.30.080, the backend now supports both Windows (10/11) and Linux!
 
-### What's CBCOJ
+### What is CBCOJ?
 
-CBCOJ is a super lightweight mini OJ that can and only supports login, logout, obtaining questions, submitting reviews, and querying review results.
+CBCOJ is an extremely lightweight Online Judge system. It focuses on core functionalities: user login/logout, problem retrieval, code submission, and querying evaluation results.
 
-~~This OJ is not accessible through a browser like other OJs, it is just a pair of accompanying programs where the client interacts with the server.~~
+~~Unlike traditional OJs accessed via browsers, CBCOJ originally consisted of paired client-server programs for interaction.~~
 
-Such descriptions has already became history. Now it has both front-end and back-end, able to reach on 
+This description is now history. CBCOJ has evolved to include both a front-end and a back-end, making it fully accessible through a web browser.
 
-However, it remains super lightweight as all the codes were written on hand, without using any existing extension libs or softwares.
+Despite this advancement, CBCOJ remains exceptionally lightweight. Crucially, the entire backend is built from scratch using pure C++, without relying on *any* external libraries or frameworks.
 
-In addition, I've finished many tests on this OJ. It finishes 100K login requests in about 8 seconds(without any access limitation).
+The front-end utilizes Node.js with HTML/CSS for convenient web rendering, while the high-performance back-end handles request processing and code evaluation. This architectural choice brings significant advantages:
 
-For the front-end, we used Node.js+HTML+css for convenient web page rendering.
+1.  **High Portability:** Simple deployment across different environments.
+2.  **Minimal Hardware Requirements:** Runs efficiently on very low-resource systems.
+3.  **High Access Efficiency:** Optimized for fast request handling. Benchmark tests show the backend can process 100,000 login requests in approximately 8 seconds (without access rate limiting).
 
-For the back-end, we used the more efficient C++ for high-speed and low consumption processing.
+These characteristics make CBCOJ an ideal solution for hosting a personal or local OJ with near-zero operational cost.
 
-These factors gives CBCOJ some significant advantages:
+### How to Use CBCOJ
 
-1. High portability
-2. Low hardware requirements
-3. High access efficiency
+You will need to download five files: `CBCOJ_Server.exe`, `CBCOJ_Front.exe`, `upx.exe`, `config_server.zip`, and `config_front.zip`.
 
-You can imaging that there's a lot more benefits other than the above advantages. So it's ULTRA suitable if you want to run a personal/local OJ with nearly zero cost!
-
-### How to use CBCOJ
-
-You should download five files: CBCOJ_Server.exe, CBCOJ_Front.exe, upx.exe, config_server.zip, and config_front.zip.
-
-Put the above three files in the same folder. Then run this command below:
+Place all three `.exe` files in the same directory. Then, run the following command:
 
 `upx.exe -d CBCOJ_Front.exe`
 
-A different CBCOJ_Front.exe will be automatically generated and directly replace the original one.
+This will decompress `CBCOJ_Front.exe`, generating a new version that replaces the original file.
 
-Extract config_server.zip into a folder(take `server/` for example), and extract config_front into another(take `front/` for example).
+Extract `config_server.zip` into a dedicated folder (e.g., `server/`), and extract `config_front.zip` into another folder (e.g., `front/`).
 
-Put CBCOJ_Server.exe under the folder `server/`, and put CBCOJ_Front.exe under the folder  `front/`.
+Move `CBCOJ_Server.exe` into the `server/` folder and `CBCOJ_Front.exe` into the `front/` folder.
 
-When using, you should start CBCOJ_Server.exe first, fetch the ipv4 of the machine on which CBCOJ_Server.exe runs, it'll be used later.
+During operation, start `CBCOJ_Server.exe` (the judge server) first. Note the IPv4 address of the machine running the judge server, as it will be needed for front-end configuration.
 
-#### Backend(Judge Server)
+#### Backend (Judge Server)
 
-The structure of `server/` should be like this:
+The structure of the `server/` directory should resemble:
 
-```plain
-{
-  'CBCOJ_Server.exe',
-  'account.ini',
-  'basic_setting.ini',
-  'log.txt',
-  'rc.txt',
-  'records/':{
-    ...
-  },
-  'work/':{
-    ...
-  },
-  'work1/':{
-    ...
-  }
-}
+```
+server/
+├── CBCOJ_Server.exe
+├── account.ini
+├── basic_setting.ini
+├── log.txt
+├── rc.txt
+├── records/
+│   └── ...
+├── work/
+│   └── ...
+└── work1/
+    └── ...
 ```
 
-`account.ini` stores the name and password of all accounts. You can set it manually, following the following format:
+*   `account.ini`: Stores user account information. Manually configure it as follows:
+    *   First line: A single integer `n` (number of accounts).
+    *   Next `n` lines: Each line contains two strings (username, password) and one integer (user ID), all separated by spaces. Usernames and passwords should consist of non-space visible characters. User IDs can be repeated.
+*   `basic_setting.ini`: Configures server settings.
+    *   Line 1: Integer `n` (number of evaluation threads).
+    *   Line 2: Path to a folder for temporary storage of submitted code (not auto-cleaned).
+    *   Next `n` lines: Paths to folders where code execution occurs. It is strongly recommended to clean these folders before starting the judger.
+*   `log.txt`: Server log file. Can be sent for crash diagnostics and may be freely cleared or deleted.
+*   `rc.txt`: Stores the latest submission ID.
 
-The first list contains one non-negative integer $n$, representing the number of different accounts.
+Refer to the release notes for more detailed information.
 
-For the next $n$ lines, each line contains two string consisting entirely of non space visible characters and one integer, separated with spaces.
+#### Frontend (Web Server)
 
-For any one of these $n$ lines, the first string represents the name of an account, the second string represents the password of the account, the integer represents the user id of the account. Note that user id is repeatable.
+The structure of the `front/` directory should resemble:
 
-`basic_setting.ini` stores some settings of the exe. You may change it following the following format:
+```
+front/
+├── CBCOJ_Front.exe
+├── config.json
+├── admin/
+│   ├── dashboard.html
+│   ├── login.html
+│   └── assets/
+│       ├── admin.css
+│       └── admin.js
+└── public/
+    ├── api/
+    │   └── ...
+    ├── login/
+    │   └── index.html
+    ├── submit/
+    │   └── index.html
+    ├── files/
+    │   └── ...          # Place publicly accessible files here
+    ├── templates/
+    │   ├── record.html
+    │   ├── list.html
+    │   ├── content.html
+    │   ├── record.css
+    │   ├── comview.css
+    │   ├── listpagin.css
+    │   ├── login.js
+    │   ├── maodie.jpg
+    │   └── chun.jpg
+    ├── problem/
+    │   └── ...          # Store problem descriptions (.html files) here
+    ├── records/
+    │   └── ...
+    ├── 403.html
+    ├── 404.html
+    ├── index.html
+    ├── favicon.ico
+    └── robots.txt
+```
 
-The first line contains one integer $n$, representing the number of evaluation threads you want to start.
+As this serves the website frontend, most files are for presentation and require no direct modification. Key components for configuration are:
 
-The second line contains the path of a folder. The submitted code will be temporarily stored here, but it will not be automatically cleaned.
-
-For the next $n$ lines, each line contains a path of a folder. The submitted code will runs in here, so it's strongly recommended to clean these folders before starting the judger program.
-
-`log.txt` is the log file of CBCOJ_Server.exe. You can send it to me if the application crashes for some unknown reason. And it can be cleared or deleted freely.
-
-`rc.txt` stores the latest submission id.
-
-More detailed information can be found in the release statement.
-
-#### Frontend(Webpage Server)
-
-The structure of `front/` should be like this:
-
-```plain
-{
-  'CBCOJ_Front.exe',
-  'config.json',
-  'admin/':{
-    'dashboard.html',
-    'login.html',
-    'assets/':{
-      'admin.css',
-      'admin.js'
+*   `front/config.json`: Main configuration file for the front-end server.
+    ```json
+    {
+        "port": ...,       // Main website port
+        "ip": ...,         // Judge Server's IPv4 Address
+        "adport": ...,     // Administration site port
+        "adaccount": [     // Admin login credentials
+            {"username": "username1", "password": "password1"},
+            {"username": "username2", "password": "password2"},
+            ...
+        ]
     }
-  },
-  'public/':{
-    'api/':{
-      ...
-    },
-    'login/':{
-      'index.html'
-    },
-    'submit/':{
-      'index.html'
-    },
-    'files/':{
-      ...
-    },
-    'templates/':{
-      'record.html',
-      'list.html',
-      'content.html',
-      'record.css',
-      'comview.css',
-      'listpagin.css',
-      'login.js',
-      'maodie.jpg',
-      'chun.jpg'
-    },
-    'problem/':{
-      ...
-    },
-    'records/':{
-      ...
-    },
-    '403.html',
-    '404.html',
-    'index.html',
-    'favicon.ico',
-    'robots.txt',
-  }
-}
-```
-
-Since it's the frontend of a website, most files simply serves for the user view, you don't need to care about most of them.
-
-You need to focus on `front/config.json`, `front/public/problem/`, and `front/public/files/`.
-
-the json file is the settings for CBCOJ_Front.exe. The structure is as follow:
-
-```plain
-{
-	"port": ...,
-	"ip": ...,
-	"adport": ...,
-	"adaccount": [
-		{"username":"username1", "password":"password1"},
-		{"username":"username2", "password":"password2"},
-		...
-	]
-}
-```
-
-Value "port" represents the port number of the website's main site.
-
-Value "adport" represents the port number of the website's management site.
-
-Value "ip" represents the judge machine's IP(IPv4).
-
-List "adaccount" represents pairs of username and password used to access the management site.
-
-In folder `front/public/problem/`, you can configure the content of the questions you set on the backend. You should put problemname.html in the folder.
-
-In folder `front/public/files/`, you can put some files in it. Others can access or download these files through this url: `website/files/filename`.
-
-### How it works
-
-#### Frontend(Webpage Server)
-
-![](https://raw.githubusercontent.com/chenyichen0420/CBCOJ/refs/heads/main/startprc.png)
-
-![](https://raw.githubusercontent.com/chenyichen0420/CBCOJ/refs/heads/main/adminprc.png)
-
-![](https://raw.githubusercontent.com/chenyichen0420/CBCOJ/refs/heads/main/mainprc.png)
+    ```
+*   `front/public/problem/`: Add problem descriptions as `problemname.html` files in this directory.
+*   `front/public/files/`: Files placed here are publicly accessible via `http://your_website/files/filename`.
