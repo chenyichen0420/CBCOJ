@@ -4,7 +4,29 @@
 
 ### Development News
 
+#### Online try-out
+
+Usually, you can access [this website](https://cbcoj.loca.lt/) to try out our newest features from 8pm on Sunday to 3pm on saturday next week.
+
+However, you can notice that this website is just a temporary address penetrated through the internal network, it may be redirected to someone else's malicious website, so **Do not enter any sensitive information**.
+
+You can also use the "Tunnel Password" displayed by localtunnel to check if it's my website. Usually the password will be `222.212.136.221`. More detailed information about localtunnel can be found in [their website](https://theboroer.github.io/localtunnel-www/).
+
+When login, you may use some temporary accounts with the same username and password, which are integers from 1 to 100.
+
+#### Backend Development 
+
 Starting from version 5.30.080, the backend now supports both Windows (10/11) and Linux!
+
+Starting from version 5.35.090, the backend and frontend supports multi-subtask bundling testing, different from the mandatory strategy of bundling all tasks in the past.
+
+Due to academic pressure, the competition function will be launched within 3 months as much as possible.
+
+#### Frontend Development
+
+Starting from version 5.35.090, the backend and frontend supports multi-subtask bundling testing, different from the mandatory strategy of bundling all tasks in the past. The relevant UI design will be adjusted accordingly.
+
+Due to academic pressure, the competition function will be launched within 3 months as much as possible.
 
 ### What is CBCOJ?
 
