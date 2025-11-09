@@ -120,15 +120,19 @@ As this serves the website frontend, most files are for presentation and require
 *   `front/config.json`: Main configuration file for the front-end server.
     ```json
     {
-        "port": ...,       // Main website port
-        "ip": ...,         // Judge Server's IPv4 Address
-        "adport": ...,     // Administration site port
-        "adaccount": [     // Admin login credentials
+        "port": ...,
+        "ip": ...,
+        "adport": ...,
+        "adaccount": [
             {"username": "username1", "password": "password1"},
             {"username": "username2", "password": "password2"},
             ...
         ]
     }
     ```
+    * "port" represents the port number of the main website.
+    * "ip" represents the Judge Server's IPv4 address.
+    * "adport" represents port number of the administration site.
+    * "adaccount" represents the administration site accounts.
 *   `front/public/problem/`: Add problem descriptions as `problemname.html` files in this directory.
 *   `front/public/files/`: Files placed here are publicly accessible via `http://your_website/files/filename`.
